@@ -1,0 +1,60 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lucida Sans', cursive;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient( purple, white);
+    }
+    
+    .h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+    
+    .box {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: animate 20s linear infinite;
+    }
+    
+    @keyframes animate {
+        0% {
+            transform: perspective(1000px)rotateX(0deg);
+        }
+        100% {
+            transform: perspective(1000px)rotateY(180deg);
+        }
+    }
+    
+    .box span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+        -webkit-box-reflect: below 15px linear-gradient(transparent, transparent, white);
+    }
+    
+    .box span img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
